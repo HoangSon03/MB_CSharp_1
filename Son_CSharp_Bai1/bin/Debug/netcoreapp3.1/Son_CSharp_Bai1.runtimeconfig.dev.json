@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\SonDiec\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\SonDiec\\.nuget\\packages"
+    ]
+  }
+}

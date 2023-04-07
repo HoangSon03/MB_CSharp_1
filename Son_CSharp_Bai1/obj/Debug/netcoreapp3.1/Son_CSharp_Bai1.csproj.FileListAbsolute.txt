@@ -1,0 +1,14 @@
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\bin\Debug\netcoreapp3.1\Son_CSharp_Bai1.exe
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\bin\Debug\netcoreapp3.1\Son_CSharp_Bai1.deps.json
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\bin\Debug\netcoreapp3.1\Son_CSharp_Bai1.runtimeconfig.json
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\bin\Debug\netcoreapp3.1\Son_CSharp_Bai1.runtimeconfig.dev.json
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\bin\Debug\netcoreapp3.1\Son_CSharp_Bai1.dll
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\bin\Debug\netcoreapp3.1\Son_CSharp_Bai1.pdb
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.csproj.AssemblyReference.cache
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.AssemblyInfoInputs.cache
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.AssemblyInfo.cs
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.csproj.CoreCompileInputs.cache
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.dll
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.pdb
+C:\Users\SonDiec\Desktop\BU_0104\Training\Son_CSharp_Bai1\Son_CSharp_Bai1\obj\Debug\netcoreapp3.1\Son_CSharp_Bai1.genruntimeconfig.cache
