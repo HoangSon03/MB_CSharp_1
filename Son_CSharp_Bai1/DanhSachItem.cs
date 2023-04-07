@@ -72,47 +72,32 @@ namespace Son_CSharp_Bai1
             Console.WriteLine("---------------------------Tìm--------------------------------------");
             Console.WriteLine("Nhập ID cần tìm :");
             string c = Console.ReadLine();
-            int tim = 0;
-            foreach (Item it in Danhsach.Values)
+            if (Danhsach.ContainsKey(c))
             {
-                if (it.ItemId == c)
-                {
-                    tim = 1;
-                    it.Xuat();
-                    break;
-                }
-                else
-                {
-                    tim = 0;
-                }
+                var item = Danhsach[c];
+                item.Xuat();
             }
-            if (tim == 0)
+            else
+            {
                 Console.WriteLine("-----> Không tồn tại item này");
+
+            }
         }
         public void Sua()
         {
             Console.WriteLine("---------------------------Cập Nhật Item--------------------------------------");
             Console.WriteLine("Nhập ID cần sửa :");
             string c = Console.ReadLine();
-            int tim = 0;
-            foreach (Item it in Danhsach.Values)
+            if (Danhsach.ContainsKey(c))
             {
-                if (it.ItemId == c)
-                {
-                    it.Xuat();
-                    tim = 1;
-                    it.Sua(it.Type);
-                    Danhsach[c] = it;
-                    Console.WriteLine("-----> Sửa thành công");
-                    break;
-                }
-                else
-                {
-                    tim = 0;
-                }
+                var item = Danhsach[c];
+                item.Sua(item.Type);
+                Console.WriteLine("-----> Cập nhật thành công");
             }
-            if (tim == 0)
+            else
+            {
                 Console.WriteLine("-----> Không tồn tại item này");
+            }
         }
         public void Xoa()
         {
@@ -123,7 +108,6 @@ namespace Son_CSharp_Bai1
             {
                 Danhsach.Remove(c);
                 Console.WriteLine("-----> Xóa thành công");
-
             }
             else
             {
@@ -133,22 +117,13 @@ namespace Son_CSharp_Bai1
 
         public void ThayDoiTinhTrang(string Id, string tinhtrang)
         {
-            int tim = 0;
-            foreach (Item item in Danhsach.Values)
+            if (Danhsach.ContainsKey(Id))
             {
-                if (item.ItemId == Id)
-                {
-                    tim = 1;
-                    item.ThayDoiTinhTrang(Id, tinhtrang);
-                    Danhsach[Id] = item;
-                    break;
-                }
-                else
-                {
-                    tim = 0;
-                }
+                var item = Danhsach[Id];
+                item.ThayDoiTinhTrang(Id, tinhtrang);
+                Danhsach[Id] = item;
             }
-            if (tim == 0)
+            else
             {
                 Console.WriteLine("-----> Không tìm thấy item này trong kho");
             }
@@ -161,41 +136,25 @@ namespace Son_CSharp_Bai1
             try
             {
                 ds.ChoMuon();
-                int tim = 0;
-                int timnguoi = 0;
-                foreach (Borrower person in danhsachnguoi.Values)
+                if (Danhsachnguoi.ContainsKey(ds.UserId))
                 {
-                    if (person.UserId == ds.UserId)
+                    if (Danhsach.ContainsKey(ds.ItemId) && Danhsach[ds.ItemId].Status == "Con")
                     {
-                        timnguoi = 1;
-                        foreach (Item item in Danhsach.Values)
-                        {
-                            if (item.ItemId == ds.ItemId && item.Status == "Con")
-                            {
-                                tim = 1;
-                                item.ThayDoiTinhTrang(ds.ItemId, "Het");
-                                Danhsach[ds.ItemId] = item;
-                                Danhsachmuon.Add(ds.BorrowNumber, ds);
-                                Console.WriteLine("-----> Mượn thành công");
-                                break;
-                            }
-                            else
-                            {
-                                tim = 0;
-                            }
-                        }
-                        if (tim == 0)
-                        {
-                            Console.WriteLine("-----> Không tìm thấy item này trong kho");
-                        }
+                        var item = Danhsach[ds.ItemId];
+                        item.ThayDoiTinhTrang(ds.ItemId, "Het");
+                        Danhsach[ds.ItemId] = item;
+                        Danhsachmuon.Add(ds.BorrowNumber, ds);
+                        Console.WriteLine("-----> Mượn thành công");
                     }
-                    else { timnguoi = 0; }
+                    else
+                    {
+                        Console.WriteLine("-----> Không tìm thấy item này trong kho");
+                    }
                 }
-                if (timnguoi == 0)
+                else
                 {
                     Console.WriteLine("-----> User này chưa được đăng ký");
                 }
-
             }
             catch
             {
@@ -208,33 +167,19 @@ namespace Son_CSharp_Bai1
             Console.WriteLine("-----------------------------Trả Sách-----------------");
             Console.WriteLine("Nhập số mượn :");
             string c = Console.ReadLine();
-            int tim = 0;
-            foreach (BorrowingHistory br in Danhsachmuon.Values)
+            if (Danhsachmuon.ContainsKey(c))
             {
-                if (br.BorrowNumber == c)
-                {
-                    tim = 1;
-                    br.TraItem();
-                    Danhsachmuon[c] = br;
-                    foreach (Item it in Danhsach.Values)
-                    {
-                        if (it.ItemId == br.ItemId)
-                        {
-                            it.ThayDoiTinhTrang(br.ItemId, "Con");
-                            Danhsach[br.ItemId] = it;
-                            break;
-                        }
-                    }
-                    Console.WriteLine("-----> Trả thành công");
-                    break;
-                }
-                else
-                {
-                    tim = 0;
-                }
+                var DanhSachMuon = Danhsachmuon[c];
+                DanhSachMuon.TraItem();
+                Danhsachmuon[c] = DanhSachMuon;
+                var item = Danhsach[DanhSachMuon.ItemId];
+                item.ThayDoiTinhTrang(DanhSachMuon.ItemId, "Con");
+                Danhsach[DanhSachMuon.ItemId] = item;
             }
-            if (tim == 0)
+            else
+            {
                 Console.WriteLine("-----> Không tồn tại trong danh sách mượn");
+            }
         }
         public void InDanhSachMuon()
         {
