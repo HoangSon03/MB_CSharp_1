@@ -30,6 +30,8 @@ namespace Son_CSharp_Bai1
                 new BorrowingHistory{  BorrowNumber = 1,  UserId = 123, UserName = "SON",  ItemId=1,ItemName="DAC NHAN TAM 1",  BorrowDate=Convert.ToDateTime("12/12/2012"),  TinhTrang="Đã Trả" },
                 new BorrowingHistory{  BorrowNumber = 2,  UserId = 123, UserName = "SON",  ItemId=4,ItemName="SIEU NHAN DEKA",  BorrowDate=Convert.ToDateTime("12/12/2012"),  TinhTrang="Đã Trả" },
                 new BorrowingHistory{  BorrowNumber = 3,  UserId = 125, UserName = "HUNG", ItemId=3,ItemName="SIEU NHAN GAO",  BorrowDate=Convert.ToDateTime("12/12/2012"),  TinhTrang="Đã Trả" },
+                new BorrowingHistory{  BorrowNumber = 4,  UserId = 123, UserName = "SON",  ItemId=5,ItemName="DAC NHAN TAM 2",  BorrowDate=Convert.ToDateTime("12/12/2012"),  TinhTrang="Đã Trả" },
+                new BorrowingHistory{  BorrowNumber = 5,  UserId = 125, UserName = "HUNG", ItemId=1,ItemName="DAC NHAN TAM 1",  BorrowDate=Convert.ToDateTime("12/12/2012"),  TinhTrang="Đã Trả" },
 
             };
         }
@@ -415,16 +417,19 @@ namespace Son_CSharp_Bai1
             Console.Clear();
 
             Console.WriteLine("-----------------------------Danh sách người mượn sách và DVD-----------------");
-            var list1 = from m in Danhsachmuon
+             var list1 = from m in Danhsachmuon
                         join i in Danhsach on m.ItemId equals i.ItemId
-                        where i.Type == "Book" select m;
+                        where i.Type == "Book"
+                        select m;
             var list2 = from m in Danhsachmuon
                         join i in Danhsach on m.ItemId equals i.ItemId
-                        where i.Type == "DVD" select m;
-            var list = from n in danhsachnguoi
-                       join l1 in list1 on n.UserId equals l1.UserId
-                       join l2 in list2 on l1.UserId equals l2.UserId
-                       select n;
+                        where i.Type == "DVD"
+                        select m;
+            var list = (from n in danhsachnguoi
+                        join l1 in list1 on n.UserId equals l1.UserId
+                        join l2 in list2 on l1.UserId equals l2.UserId
+                        select n).Distinct();
+
             foreach (Borrower br in list)
             {
                 br.Xuat();
