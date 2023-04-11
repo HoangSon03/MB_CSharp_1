@@ -24,19 +24,40 @@ namespace Son_CSharp_Bai1
                 Console.WriteLine("8 : Mượn Item");
                 Console.WriteLine("9 : Trả Item");
                 Console.WriteLine("10 : Xuất danh sach mượn trả");
-                Console.WriteLine("0 : Thoát");
+                Console.WriteLine("11 : Xuất danh sách Item Sách");
+                Console.WriteLine("12 : Xuất danh sách DVD xuất bản 2022");
+                Console.WriteLine("13 : Xuất danh Người mượn Sách và Item");
+                //Console.WriteLine("0 : Thoát");
                 string luachon = Console.ReadLine();
-                if (luachon == "1") QLTV.Nhap();
-                else if (luachon == "2") QLTV.Xuat();
-                else if (luachon == "3") QLTV.Sua();
-                else if (luachon == "4") QLTV.Xoa();
-                else if (luachon == "5") QLTV.Tim();
-                else if (luachon == "6") QLTV.NhapNguoi();
-                else if (luachon == "7") QLTV.XuatNguoi();
-                else if (luachon == "8") QLTV.MuonSach();
-                else if (luachon == "9") QLTV.TraSach();
-                else if (luachon == "10") QLTV.InDanhSachMuon();
-                else if (luachon == "0") break;
+                switch (luachon)
+                {
+                    case "1": 
+                        QLTV.Nhap(); break;
+                    case "2": 
+                        QLTV.Xuat(); break;
+                    case "3": 
+                        QLTV.Sua(); break;
+                    case "4":
+                        QLTV.Xoa(); break;
+                    case "5": 
+                        QLTV.TimItem(); break;
+                    case "6": 
+                        QLTV.NhapNguoi(); break;
+                    case "7": 
+                        QLTV.XuatNguoi(); break;
+                    case "8":
+                        QLTV.MuonSach(); break;
+                    case "9": 
+                        QLTV.TraSach(); break;
+                    case "10": 
+                        QLTV.InDanhSachMuon(); break;
+                    case "11": 
+                        QLTV.XuatSach(); break;
+                    case "12":
+                        QLTV.DemDVD(); break;
+                    case "13":
+                        QLTV.InDSNguoiMuon(); break;
+                }
             }
         }
     }

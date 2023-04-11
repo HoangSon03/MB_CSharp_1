@@ -12,7 +12,7 @@ namespace Son_CSharp_Bai1
         public Book()
         {
         }
-        public Book(string itemId, string title, string author, DateTime publicstionDate, string type,string status, int numOfPage)
+        public Book(int itemId, string title, string author, DateTime publicstionDate, string type,string status, int numOfPage)
             : base(itemId, title, author, publicstionDate, type,status)
         {
             this.NumOfPage = numOfPage;
@@ -20,10 +20,10 @@ namespace Son_CSharp_Bai1
 
        
 
-        public override void Nhap(string type)
+        public override void Nhap(int id,string type)
         {
             Console.WriteLine("Nhập thông tin Sách");
-            base.Nhap(type);
+            base.Nhap(id,type);
             while (true)
             {
                 try
@@ -40,7 +40,6 @@ namespace Son_CSharp_Bai1
 
         public override void Xuat()
         {
-            Console.WriteLine("Thông tin Sách");
             base.Xuat();
             Console.WriteLine("Số trang :{0}",this.NumOfPage);
             Console.WriteLine("-------------------------");
